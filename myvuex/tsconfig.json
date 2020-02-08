@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+      "target": "es5" ,
+      "module": "commonjs" ,
+      "lib": [
+      "es6",
+      "dom",
+      "es2015.promise"
+      ] ,
+      "allowJs": false ,
+      "checkJs": false ,
+      "declaration": true ,
+      "sourceMap": true ,
+      "outDir": "./out/" ,
+      "removeComments": true ,
+      "strict": true ,
+      "noImplicitAny": false ,
+      "baseUrl": "./src" ,
+      "esModuleInterop": true 
+    },
+    "exclude": ["build", "dist", "out", "*.config.js"]
+}
