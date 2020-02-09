@@ -70,7 +70,7 @@ class Store {
 }
 
 /**
- * 格式化状态树
+ * 状态收集
  * moduleCollection
  */
 class moduleCollection{
@@ -95,6 +95,7 @@ class moduleCollection{
     // 如果含有modules，则需要循环注册内部模块
     if(rootModule.modules){
         forEachValue(rootModule.modules,(rootChildModule,key)=>{
+          //递归拼接
           this.register(path.concat(key),rootChildModule)
         })
       }
@@ -117,6 +118,7 @@ function installModule(store, rootState, path, rootModule) {
     const parent = path.slice(0,-1).reduce((state,key)=>{
       return state[key]
     },rootState)
+    // set注册新的属性，保证它也是响应式的
     Vue.set(parent, path[path.length - 1], rootModule.state)
   }
   // 循环注册包含模块内的所有getters
